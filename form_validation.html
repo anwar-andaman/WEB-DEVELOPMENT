@@ -1,60 +1,70 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html><head>
+<style>
+fieldset {
+  font-size:20px;
+  padding:10px;
+  width:250px;
+  line-height:1.8;}</style>
+<title>registration form</title>
 </head>
-<body><h2 align="center">REGISTRATION FORM</h2>
-<form id="registration-form" method="post" onsubmit="return validateForm()"><fieldset><legend>Personal Informations</legend>
-<label>Name:</label>
-<input type="text" id="name" name="name"><br><br>
-<label>Gender:</label>
+<body>
+<center>
+<fieldset><legend>Registration Form</legend>
+
+<form name="form" action="#" method="POST">
+Username:<br>
+<input type="text" name="name"><br>
+E-mail:<br>
+<input type="email" name="email"><br>
+Create Password:<br>
+<input type="password" name="pass1"><br>
+Confirm Password:<br>
+<input type="password" name="pass2"><br>
+Contact:<br>
+<input type="number" name="phn"><br>
+Gender:<br>
 <input type="radio" name="male">Male
 <input type="radio" name="female">Female
- <input type="radio" name="other">Other<br><br>
-<label>Age:</label>
-<input type="number maxlength="4" size="4"" name="Age"><br><br>
-<label>Add Your Image:</label>
-<input type="file" id="myfile" name="myfile"><br><br>
-<label>E-Mail:</label>
-<input type="email" id="email" name="email"><br><br>
-<label>Phone Number:</label>
-<input type="number" id="phone" name="phone"><br><br>
-<label>Create Password:
-<input type="password" id="password"name="password"><br><br>
-Confirm Password:
-<input type="password" id="confirm-password" name="confirm-password"></fieldset>
-<center>
-<input type="Submit" name="Submit">
-<input type="Reset" name="Reset">
-</center>
+<input type="radio" name="other">Other
+<input type="submit" value="Submit" name="Submit">
+<input type="reset" value="Reset" name="Reset">
+</fieldset></center>
 </form>
-<script>
-function validateForm() {
-var name = document.getElementById("name").value;
-var phone = document.getElementById("phone").value;
-var email = document.getElementById("email").value;
-var password = document.getElementById("password").value;
-var confirmPassword = document.getElementById("confirm-password").value;
-var errorMessage = "";
- 
-if(name==""){
-errorMessage+="Name is required.\n";
+<?php
+if(isset($_POST['Submit']))
+{
+$username=$_POST['name'];
+$password1=$_POST['pass1'];
+$password2=$_POST['pass2'];
+$email=$_POST['email'];
+$phone=$_POST['phn'];
+if(empty($username))
+{
+ echo "<script>alert('Enter Username!')</script>";
 }
-if(phone==""){
-errorMessage+="Phone Number is required.\n";
+else if(empty($email))
+{
+ echo "<script>alert('Enter e-mail!')</script>";
 }
-if(email==""){
-errorMessage+="Email is required.\n";
+else if(empty($password1))
+{
+ echo "<script>alert('Enter password!')</script>";
 }
-if(password=="") {
-errorMessage+="Password is required.\n";
+else if(strlen($password1)<8)
+{
+ echo "<script>alert('Your password must contain atleat 8 character!')</script>";
 }
-if(password!=confirmPassword) {
-errorMessage+="Passwords do not match.\n";
+else if($password1!=$password2){
+echo "<script>alert('Passwords do not Match!')</script>";
 }
-if(errorMessage!="") {
-alert(errorMessage);
+else if(empty($phone))
+{echo "<script>alert('Enter Phone Number!')</script>";
+}
+else
+{
+ echo "<script>alert('Registration successful!')</script>";
 }
 }
-</script>
+?>
 </body>
 </html>

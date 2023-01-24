@@ -1,0 +1,23 @@
+<html>
+<body>
+<center><button type="button" onclick="bgchange();">Click here to change Background Color</button></center>
+<script type="text/javascript">
+var clr=["red","blue","green","yellow","orange","brown","pink","black"];
+var l=clr.length;
+var i=0;
+function bgchange()
+{
+
+while(i<l)
+{
+document.getElementsByTagName("body")[0].style.backgroundColor=clr[i];
+i=i+1;
+if (i>7)
+ i=0;
+return;
+}
+ 
+}
+</script>
+</body>
+</html>

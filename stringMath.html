@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>String and Math Functions</title>
+<style>
+p
+{
+color:black;
+}
+
+#str1,#mat
+{
+color:blue;
+}
+h1
+{
+color:red;
+}
+</style>
+</head>
+<body >
+<center><h1> String and Math Functions </h1> </center>
+<table border=1>
+<tr>
+<td width=50% align=center><p><b>String Functions</b></p></td>
+<td width=50% align=center><p><b>Math Functions</b></p></td>
+</tr>
+<tr>
+<td><p id="str1"></p></td><td><p id="mat"></p></td>
+</tr>
+<tr>
+<td><script>
+document.getElementById('str1').innerHTML = "The String is: <b>'MCA is a Professional Course'</b>";
+let str =  'MCA is a Professional Course';
+document.write("1. Length of the String is: " + str.length);
+document.write("<br><br>2. Substring of given string using substr(0,3) is:  " + str.substr(0,3));
+document.write("<br><br>3. Upper Case of the String using toUpperCase() is: " + str.toUpperCase());
+document.write("<br><br>4. Index of Professional using indexOf() is : " + str.indexOf("Professional"));
+document.write("<br><br>5. String after Concatenation usig concat(): " + "MBA and ".concat(str));
+document.write("<br><br>6. String using replace(str,'MBA') is : " + str.replace("MCA","MBA"));
+document.write("<br><br>7. Substring using charAt(9) is : " + str.charAt(9));
+</script></td>
+<td><script>
+document.getElementById('mat').innerHTML = "Consider the number <b>625.25</b>";
+let mat =  625.25;
+document.write("1. Square root of 625.25 is : " ) //+ Math.sqrt(mat));
+document.write("<br><br>2. Value of PI is: " + Math.PI);
+document.write("<br><br>3. Round value of 625.25 is: " + Math.round(mat));
+document.write("<br><br>4. Ceil value of 625.25 is: " + Math.ceil(mat));
+document.write("<br><br>5. Floor value of 625.25 is: " + Math.floor(mat));
+document.write("<br><br>6. Maximum values of 10,35,12 is: " + Math.max(10,35,12));
+document.write("<br><br>7. Minimum values of 10,35,12 is: " + Math.min(10,35,12));
+</script></td>
+</tr>
+</table>
+
+
+
+
+
+
+</body>
+</html>

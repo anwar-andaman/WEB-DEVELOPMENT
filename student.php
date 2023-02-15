@@ -1,5 +1,5 @@
 <?php
-$name=["Aswin","Maanas","Vishnu","Minhaj","Vaishnav"];
+$name=["Ram","Gopal","Sunil","Nileena","Shakeela"];
 $t=$name;
 echo "Display using print_r<br>";
 print_r($name);
